@@ -1,0 +1,17 @@
+{
+  "request": {
+    "users": 10,
+    "requests": 100,
+    "wait": 2   
+  },
+  "environment": {
+    "host": "http://wdw-latest.disney.go.com"
+  },
+  "tests": [{
+    "url": "/resorts/",
+    "cookie": {
+      "name": "resortListingUseMemcache",
+      "value": "true"
+    }
+  }]
+}
