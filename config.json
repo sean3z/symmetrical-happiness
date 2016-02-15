@@ -1,16 +1,24 @@
 {
   "request": {
     "users": 10,
-    "requests": 100,
-    "wait": 2   
+    "requests": 5,
+    "delay": 1
   },
   "environment": {
-    "host": "http://wdw-latest.disney.go.com"
+    "host": "wdw-latest.disney.go.com"
   },
   "tests": [{
-    "url": "/resorts/",
+    "path": "/resorts/",
+    "method": "GET",
     "cookie": {
       "name": "resortListingUseMemcache",
+      "value": "true"
+    }
+  },{
+    "path": "/",
+    "method": "GET",
+    "cookie": {
+      "name": "parkListingHours",
       "value": "true"
     }
   }]
