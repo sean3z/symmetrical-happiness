@@ -3,6 +3,8 @@
 const http = require('http');
 const https = require('https');
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+
 let request = (options) => {
   return new Promise((resolve, reject) => {
     let start = Date.now();
