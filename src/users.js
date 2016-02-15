@@ -32,18 +32,20 @@ module.exports = (enabled, cb) => {
       let test = tests[id];
 
       let options = {
-        hostname: 'www.google.com',
-        // hostname: config.environment.host,
-        // path: test.path,
+        hostname: config.environment.host,
+        path: test.path,
         method: test.method.toUpperCase(),
-        headers: {Cookie: 'test=meow;'},
+        headers: {},
         id
       };
 
+      let cookies = test.disabled.cookies;
       if (enabled) {
-        options.headers.Cookie = {};
-      } else {
-        options.headers.Cookie = {};
+        cookies = test.enabled.cookies;
+      } 
+
+      if (cookies) {
+        options.headers.Cookie = cookies.join(';');
       }
 
       for (let x = config.request.requests; x > 0; x--) {
