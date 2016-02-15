@@ -27,19 +27,23 @@ module.exports = (enabled, cb) => {
 
   function tasks() {
     let tasks = [];
-    
-    for (let test of tests) {
+
+    for (let id of Object.keys(tests)) {
+      let test = tests[id];
+
       let options = {
         hostname: 'www.google.com',
         // hostname: config.environment.host,
         // path: test.path,
-        method: test.method.toUpperCase()
+        method: test.method.toUpperCase(),
+        headers: {Cookie: 'test=meow;'},
+        id
       };
 
       if (enabled) {
-        options.headers = {};
+        options.headers.Cookie = {};
       } else {
-        options.headers = {};
+        options.headers.Cookie = {};
       }
 
       for (let x = config.request.requests; x > 0; x--) {

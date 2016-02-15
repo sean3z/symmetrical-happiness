@@ -19,7 +19,7 @@ let request = (options) => {
         resolve({
           ttfb,
           end: Date.now() - start,
-          options
+          id: options.id
         });
       });
     };

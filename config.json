@@ -7,19 +7,30 @@
   "environment": {
     "host": "wdw-latest.disney.go.com"
   },
-  "tests": [{
-    "path": "/resorts/",
-    "method": "GET",
-    "cookie": {
-      "name": "resortListingUseMemcache",
-      "value": "true"
+  "tests": {
+    "resortListingUseMemcache": {
+      "path": "/resorts/",
+      "method": "GET",
+      "enabled": {
+        "cookie": {
+          "name": "resortListingUseMemcache",
+          "value": "true"
+        }
+      },
+      "disabled": {
+        "cookie": {
+          "name": "resortListingUseMemcache",
+          "value": "false"
+        }
+      }
+    },
+    "parkListingHours": {
+      "path": "/",
+      "method": "GET",
+      "cookie": {
+        "name": "parkListingHours",
+        "value": "true"
+      }
     }
-  },{
-    "path": "/",
-    "method": "GET",
-    "cookie": {
-      "name": "parkListingHours",
-      "value": "true"
-    }
-  }]
+  }
 }
