@@ -12,16 +12,14 @@
       "path": "/resorts/",
       "method": "GET",
       "enabled": {
-        "cookie": {
-          "name": "resortListingUseMemcache",
-          "value": "true"
-        }
+        "cookies": [
+          "resortListingUseMemcache=true"
+        ]
       },
       "disabled": {
-        "cookie": {
-          "name": "resortListingUseMemcache",
-          "value": "false"
-        }
+        "cookies": [
+          "resortListingUseMemcache=false"
+        ]
       }
     },
     "parkListingHours": {
