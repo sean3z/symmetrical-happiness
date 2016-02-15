@@ -18,7 +18,8 @@ let request = (options) => {
       res.on('end', () => {
         resolve({
           ttfb,
-          end: Date.now() - start
+          end: Date.now() - start,
+          options
         });
       });
     };
