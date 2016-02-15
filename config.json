@@ -25,9 +25,15 @@
     "parkListingHours": {
       "path": "/",
       "method": "GET",
-      "cookie": {
-        "name": "parkListingHours",
-        "value": "true"
+      "enabled": {
+        "cookies": [
+          "parkListingHours=true"
+        ]
+      },
+      "disabled": {
+        "cookies": [
+          "parkListingHours=false"
+        ]
       }
     }
   }
